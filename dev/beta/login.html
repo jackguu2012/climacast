@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Secure Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login Page</h2>
+        <div class="error" id="error-message"></div>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="unique-id">Enter Unique ID:</label>
+                <input type="text" id="unique-id" name="unique-id" required>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+// Mapping of unique IDs to specific URLs
+const redirectUrls = {
+    '6E97J3': 'https://dev.climacast.uk/beta/session/A3bX9LqP7Z2nW5dK1T',
+};
+
+// Handle form submission
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting
+
+    const uniqueId = document.getElementById('unique-id').value.trim();
+    const errorMessage = document.getElementById('error-message');
+
+    // Check if the entered ID is valid
+    if (redirectUrls[uniqueId]) {
+        // Redirect to the corresponding URL for the entered unique ID
+        window.location.href = redirectUrls[uniqueId];
+    } else {
+        // Display error message if the ID is incorrect
+        errorMessage.textContent = 'Invalid Unique ID. Please try again.';
+    }
+});
+
+    </script>
+
+</body>
+</html>

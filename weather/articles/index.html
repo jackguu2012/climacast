@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stay updated with the latest articles and insights.">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+    <title>Articles - ClimaCast</title>
+
+    <style>
+        /* General Styles */
+        body {
+            background-color: #eff2fe;
+            font-family: 'Funnel Display', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .nav-bar-btn {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: background-color 0.2s ease-in-out;
+            border-radius: 15px;
+            margin: 5px;
+        }
+
+        .nav-bar-btn:hover {
+            background-color: #a9d0ff;
+        }
+
+        /* Main Content */
+        .main-web-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        #title {
+            font-size: 50px;
+            color: #01233d;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        /* Articles */
+        .article-card {
+            background-color: #dfe6f5;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 15px;
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-card img {
+            width: 150px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article-card h1 {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+
+        .article-card p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #01233d;
+            color: white;
+            text-decoration: none;
+            border-radius: 13px;
+            font-weight: bold;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .read-more:hover {
+            background-color: #034c8c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #c9e1ff;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            #title {
+                font-size: 36px;
+            }
+
+            .article-card h1 {
+                font-size: 24px;
+            }
+
+            .article-card p {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .nav-bar-btn {
+                font-size: 14px;
+                padding: 8px;
+                border-radius: 10px;
+            }
+
+            #title {
+                font-size: 28px;
+            }
+
+            .article-card h1 {
+                font-size: 20px;
+            }
+
+            .article-card p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a class="nav-bar-btn" href="#">Home</a>
+        <a class="nav-bar-btn" href="#">Weather</a>
+        <a class="nav-bar-btn" href="#">About</a>
+        <a class="nav-bar-btn" href="#">Contact</a>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-web-content">
+        <h1 id="title">Articles</h1>
+
+        <!-- Articles -->
+         <h2>New and noteworthy:</h2>
+        <div class="article-card">
+            <h1>What's new in ClimaCast 3?</h1>
+            <p>Explore how ClimaCast has changed for the better and how you can make the most out of it.</p>
+            <a href="https://weather.climacast.uk/articles/placeholder1/" class="read-more">Read More</a>
+        </div>
+
+        <h2>Worth a read:</h2>
+        <div class="article-card">
+            <h1>How to Prepare for Severe Weather</h1>
+            <p>Learn essential tips to stay safe during extreme weather conditions.</p>
+            <a href="https://weather.climacast.uk/articles/placeholder2/" class="read-more">Read More</a>
+        </div>
+    </div>
+</body>
+</html>

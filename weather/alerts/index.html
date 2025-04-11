@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Live Weather Alerts - Stay updated with the latest warnings.">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    
+    <title>Weather Alerts - ClimaCast</title>
+
+    <style>
+        body {
+            background-color: #eff2fe;
+            font-family: 'Funnel Display', sans-serif;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            position: relative;
+            padding: 10px;
+        }
+
+        .nav-bar-btn {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: background-color 0.2s ease-in-out;
+            border-radius: 15px;
+        }
+
+        .more-btn {
+            border: 3px solid black;
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: background-color 0.2s ease-in-out;
+            border-radius: 15px;
+        }
+
+        .more-btn:hover {
+            background-color: #dfdfdf;
+        }
+
+        .nav-bar-btn:hover {
+            background-color: #c9e1ff;
+        }
+
+        .alerts-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #eff2fe;
+            border-radius: 10px;
+        }
+
+        .alert-box {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 20px;
+            text-align: left;
+        }
+
+        .red-alert {
+            background-color: #ff4d4d;
+            color: white;
+            border-left: 8px solid #8b0000;
+        }
+
+        .amber-alert {
+            background-color: #ed8641;
+            color: white;
+            border-left: 8px solid #8b4203;
+        }
+
+        .yellow-alert {
+            background-color: #ffcc00;
+            color: black;
+            border-left: 8px solid #ff9900;
+        }
+
+        .green-alert {
+            background-color: #4caf50;
+            color: white;
+            border-left: 8px solid #006400;
+        }
+
+        .alert-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .alert-description {
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #c9e1ff;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a class="nav-bar-btn" href="https://weather.climacast.uk/">Back</a>
+    </header>
+
+    <div class="alerts-container" id="alerts">
+        <!--<div class="alert-box red-alert" data-location="London">
+            <p class="alert-title">Severe Thunderstorm Warning (Red)</p>
+            <p class="alert-description">Heavy thunderstorms expected in London. Risk of flooding.</p>
+            <p><b>Issued:</b> 12:00 PM</p>
+            <p><b>Expires:</b> 6:00 PM</p>
+            <a class="more-btn" href="https://weather.climacast.uk/alerts/more/1">More info</a>
+        </div>-->
+
+        <!--<div class="alert-box amber-alert" data-location="Manchester">
+            <p class="alert-title">Heavy Rainfall Alert (Yellow)</p>
+            <p class="alert-description">Moderate rainfall expected in Manchester. Drive safely.</p>
+            <p><b>Issued:</b> 10:00 AM</p>
+            <p><b>Expires:</b> 8:00 PM</p>
+            <a class="more-btn" href="https://weather.climacast.uk/alerts/more/2">More info</a>
+        </div>-->
+
+        <!--<div class="alert-box yellow-alert" data-location="Manchester">
+            <p class="alert-title">Heavy Rainfall Alert (Yellow)</p>
+            <p class="alert-description">Moderate rainfall expected in Manchester. Drive safely.</p>
+            <p><b>Issued:</b> 10:00 AM</p>
+            <p><b>Expires:</b> 8:00 PM</p>
+            <a class="more-btn" href="https://weather.climacast.uk/alerts/more/3">More info</a>
+        </div>-->
+
+        <div class="alert-box green-alert" data-location="Birmingham">
+            <p class="alert-title">All is well (Green)</p>
+            <p class="alert-description">No current weather threats.</p>
+        </div>
+    </div>
+    <script>
+        function filterAlerts() {
+            let input = document.getElementById("search-in").value.trim().toLowerCase();
+            let alerts = document.querySelectorAll(".alert-box");
+
+            alerts.forEach(alert => {
+                let location = alert.getAttribute("data-location").toLowerCase();
+                if (location.includes(input) || input === "") {
+                    alert.style.display = "block";
+                } else {
+                    alert.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
